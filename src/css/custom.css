@@ -221,8 +221,8 @@ td > .theme-code-block:last-child {
 }
 
 .tabs-container {
-  border: 1px solid #ccc;
   border-radius: 8px;
+  box-shadow: 0 0 2px #aaa;
   padding: 16px;
 }
 .tabs-container .tabs {
