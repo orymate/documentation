@@ -34,6 +34,17 @@ In all-in-one deployments, gRPC traffic will be served on loopback on port `:544
 | :-- | :-- | :-- | :-- | :-- |
 | `address` | `ADDRESS` | `string` | **required** | `:443` |
 
+<h3>Examples</h3>
+
+```yaml title="config.yaml"
+address: ':8443'
+```
+
+```shell
+# environment variable
+ADDRESS=:8443
+```
+
 </TabItem>
 <TabItem label="Enterprise" value="Enterprise">
 
@@ -47,12 +58,4 @@ In all-in-one deployments, gRPC traffic will be served on loopback on port `:544
 </TabItem>
 </Tabs>
 
-### Examples
 
-```yaml
-# config file key
-address: :8443
-
-# environment variable
-ADDRESS=:8443
-```
