@@ -113,6 +113,24 @@ pomerium-cli tcp tcp+https://proxy.corp.example.com:8443/redis.internal.example.
 
 The command above connects to `https://pomerium.corp.example.com:8443` and then requests the TCP route for `redis.internal.example.com:6379`.
 
+### Client Certificates
+
+If Pomerium is configured to require client certificates, you will also need to provide a client certificate and private key when invoking the `pomerium-cli` command.
+
+You can specify these either by using PEM files, or (starting in v0.23) by searching for a certificate in the system trust store (on macOS and Windows only).
+
+To specify a client certificate and key using PEM files:
+
+```bash
+pomerium-cli tcp --client-cert cert.pem --client-key key.pem redis.corp.example.com:6379
+```
+
+To search for a client certificate in the system trust store you will need to specify the Common Name of the client certificate's issuer:
+
+```bash
+pomerium-cli tcp --client-cert-issuer-cn "intermediate CA T1" redis.corp.example.com:6379
+```
+
 ## Service-Specific Documentation
 
 We've outlined how to use a TCP tunnel through Pomerium for several popular services that use TCP connections:
